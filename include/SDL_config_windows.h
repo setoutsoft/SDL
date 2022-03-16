@@ -230,7 +230,11 @@ typedef unsigned int uintptr_t;
 #define SDL_HAPTIC_XINPUT   1
 
 /* Enable the sensor driver */
+#if _MSC_VER > 1500
 #define SDL_SENSOR_WINDOWS  1
+#else 
+#define SDL_SENSOR_DISABLED 1
+#endif
 
 /* Enable various shared object loading systems */
 #define SDL_LOADSO_WINDOWS  1

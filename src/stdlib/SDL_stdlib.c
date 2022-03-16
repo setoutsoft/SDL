@@ -626,11 +626,13 @@ localexit:
     /* *INDENT-ON* */
 }
 
+#if !defined(_WIN32) || _MSC_VER>=1600
 void
 _ftol2_sse()
 {
     _ftol();
 }
+#endif
 
 /* 64-bit math operators for 32-bit systems */
 void
